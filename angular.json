@@ -122,7 +122,50 @@
           }
         }
       }
+    },
+    "ajx-autocomplete": {
+      "projectType": "library",
+      "root": "projects/ajx-autocomplete",
+      "sourceRoot": "projects/ajx-autocomplete/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ajx-autocomplete/tsconfig.lib.json",
+            "project": "projects/ajx-autocomplete/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ajx-autocomplete/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ajx-autocomplete/src/test.ts",
+            "tsConfig": "projects/ajx-autocomplete/tsconfig.spec.json",
+            "karmaConfig": "projects/ajx-autocomplete/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ajx-autocomplete/tsconfig.lib.json",
+              "projects/ajx-autocomplete/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ajxautocomplete"
+  "defaultProject": "ajxautocomplete",
+  "cli": {
+    "analytics": false
+  }
 }

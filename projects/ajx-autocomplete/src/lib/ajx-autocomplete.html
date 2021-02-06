@@ -1,0 +1,17 @@
+<div class="ajx-autocomplete">
+    <input type="{{type}}"
+            placeholder="{{placeholder}}"
+            (keyup)="onChange($event, input.value)"
+            autocomplete="off"
+            #input/>
+    <div class="ajx-autocomplete-suggestions" *ngIf="suggestions?.length > 0">
+        <ul class="ajx-autocomplete-suggestions-list">
+          <li class="ajx-autocomplete-suggestions-list-item"
+              [ngClass]='{ "active" : i === activeSuggestionIndex }'
+              *ngFor="let suggestion of suggestions; let i = index" 
+              (click)="fillTextBox(suggestion.full,suggestion.data)">
+              <span [ngClass]="getClass(elem[1].value, elem[1].class)" *ngFor="let elem of suggestion.splitted">{{elem[1].value}}</span>
+          </li>
+        </ul>
+      </div>
+  </div>
