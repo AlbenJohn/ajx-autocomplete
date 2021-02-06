@@ -8,7 +8,7 @@ Run `npm install ajx-autocomplete`
 
 ## Usage
 
-First import NgxAutocompleteModule to your module:
+First import AjxAutocompleteModule to your module:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
